@@ -1,0 +1,11 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: url(./bg\ 1.jpg);
+}
+form{
+    box-shadow: 2px 6px 100px #fff;
+}

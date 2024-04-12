@@ -1,0 +1,22 @@
+{
+    "title_of_project": "Neev Project",
+    "summary": "",
+    "author": "neev_user",
+    "email": "",
+    "database_type": "mysql",
+    "db_name": "mydatabase",
+    "db_user": "root",
+    "db_password": "",
+    "db_host": "localhost",
+    "db_port": "3306",
+    "auth_app_needed": true,
+    "auth_template_choice": "1",
+    "additional_apps": [
+        "tilasd",
+        "no"
+    ],
+    "static_dir": "assets",
+    "media_dir": "media",
+    "landing_page_templates": "1",
+    "vcs": true
+}

@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    color: white !important;
+}
+
+.container{
+    background-image: url(./bg3.jpg);
+    height: 100vh !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.w-50{
+    width: 30% !important;
+    position: absolute !important;
+    top: 120px !important;
+    border: 2px solid cadetblue !important;
+    left: 35%;
+}
+
+.form-label{
+    font-weight: 700;
+}
+
+.btn-primary{
+    background-color: brown;
+    border: none !important;
+    width: 100px !important;
+}
+
+form{
+    border-radius: 10px;
+}
+
+@media only screen and (max-width:600px){
+    .w-50{
+        width: 100% !important;
+        left: 0 !important;
+    }
+}
