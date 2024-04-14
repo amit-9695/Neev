@@ -1,48 +1,52 @@
-import argparse
-import subprocess
 import json
 import os
-from requirement_generator import generate as generate_requirements
+import subprocess
 
-def install_requirements(project_name):
-    """Install the required packages using pip."""
-    os.makedirs(project_name, exist_ok=True)
-    os.chdir(project_name)
-    generate_requirements()
-    subprocess.run(["pip", "install", "-r", "requirements.txt"], check=True)
+def load_config():
+    with open('config.json', 'r') as config_file:
+        config = json.load(config_file)
+    return config
 
-def create_django_project():
-    """Create a Django project."""
-    subprocess.run(["django-admin", "startproject", 'config', '.'], check=True)
+def create_django_project(config):
+    # Creating the Django project
+    subprocess.run(["django-admin", "startproject", config['title_of_project']])
+    
+    # Change into the project directory
+    os.chdir(config['title_of_project'])
 
-def setup_directories(project_name):
-    """Create additional directories for the Django project."""
-    os.makedirs(os.path.join(project_name, "templates"), exist_ok=True)
-    os.makedirs(os.path.join(project_name, "config"), exist_ok=True)
-    os.makedirs(os.path.join(project_name, "assets"), exist_ok=True)
-    os.makedirs(os.path.join(project_name, "shop"), exist_ok=True)
-    os.makedirs(os.path.join(project_name, "media"), exist_ok=True)
+    # Setting up the database settings
+    database_settings = f"""
+DATABASES = {{
+    'default': {{
+        'ENGINE': 'django.db.backends.{config['database_type']}',
+        'NAME': '{config['db_name']}',
+        'USER': '{config['db_user']}',
+        'PASSWORD': '{config['db_password']}',
+        'HOST': '{config['db_host']}',
+        'PORT': '{config['db_port']}',
+    }}
+}}
+"""
+    # Append database settings to settings.py
+    with open('settings.py', 'a') as settings:
+        settings.write(database_settings)
+
+    # Create additional apps if needed
+    if config['additional_apps']:
+        for app in config['additional_apps']:
+            subprocess.run(["python", "manage.py", "startapp", app])
+
+    # Setup version control if required
+    if config['vcs']:
+        subprocess.run(["git", "init"])
+        subprocess.run(["git", "add", "."])
+        subprocess.run(["git", "commit", "-m", "Initial commit"])
+
+    print("Django project setup complete.")
 
 def main():
-    parser = argparse.ArgumentParser(description="Setup a new Django project with Neev.")
-    parser.add_argument("--install", help="Install project requirements.", action="store_true")
-    parser.add_argument("--create", help="Create a new Django project.", action="store_true")
-    parser.add_argument("--setup", help="Set up project directories.", action="store_true")
-
-    args = parser.parse_args()
-
-    if args.install:
-        install_requirements(config['title_of_project'])
-
-    if args.create:
-        with open('config.json', 'r') as config_file:
-            config = json.load(config_file)
-            create_django_project()
-
-    if args.setup:
-        with open('config.json', 'r') as config_file:
-            config = json.load(config_file)
-            setup_directories(config['title_of_project'])
+    config = load_config()
+    create_django_project(config)
 
 if __name__ == "__main__":
     main()

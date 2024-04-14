@@ -1,22 +1,20 @@
 {
-    "title_of_project": "Neev Project",
-    "summary": "",
-    "author": "neev_user",
-    "email": "",
+    "title_of_project": "First_project",
+    "summary": "This is a dummy Project , and it is like a e commerce websive",
+    "author": "Amit",
+    "email": "amit123@gmail.com",
     "database_type": "mysql",
-    "db_name": "mydatabase",
+    "db_name": "root",
     "db_user": "root",
-    "db_password": "",
-    "db_host": "localhost",
-    "db_port": "3306",
-    "auth_app_needed": true,
-    "auth_template_choice": "1",
+    "db_password": "Amit@123",
+    "db_host": "root",
+    "db_port": "root",
+    "auth_app_needed": false,
     "additional_apps": [
-        "tilasd",
-        "no"
+        "shop"
     ],
-    "static_dir": "assets",
-    "media_dir": "media",
+    "static_dir": "media",
+    "media_dir": "media_2",
     "landing_page_templates": "1",
-    "vcs": true
+    "vcs": false
 }
