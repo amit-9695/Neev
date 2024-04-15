@@ -7,7 +7,7 @@ def get_project_config():
     config = {}
     title = input("Enter the title of your project: ")
     if title:
-        config['👉title_of_project'] = title
+        config['title_of_project'] = title
     else:
         config['title_of_project'] = "Neev Project"
     summary = input("Enter a brief summary of your project in one line: ")

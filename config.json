@@ -1,20 +1,22 @@
 {
-    "title_of_project": "First_project",
-    "summary": "This is a dummy Project , and it is like a e commerce websive",
+    "title_of_project": "New",
+    "summary": "New Project",
     "author": "Amit",
-    "email": "amit123@gmail.com",
+    "email": "Amit12@gmail.com",
     "database_type": "mysql",
     "db_name": "root",
     "db_user": "root",
     "db_password": "Amit@123",
-    "db_host": "root",
+    "db_host": "localhost",
     "db_port": "root",
-    "auth_app_needed": false,
+    "auth_app_needed": true,
+    "auth_template_choice": "2",
     "additional_apps": [
-        "shop"
+        "shop",
+        "shop2"
     ],
-    "static_dir": "media",
-    "media_dir": "media_2",
-    "landing_page_templates": "1",
-    "vcs": false
+    "static_dir": "Static",
+    "media_dir": "Media",
+    "landing_page_templates": "2",
+    "vcs": true
 }
