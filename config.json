@@ -10,13 +10,13 @@
     "db_host": "localhost",
     "db_port": "root",
     "auth_app_needed": true,
-    "auth_template_choice": "2",
+    "auth_template_choice": "1",
     "additional_apps": [
         "shop",
         "shop2"
     ],
-    "static_dir": "Static",
-    "media_dir": "Media",
+    "static_dir": "static",
+    "media_dir": "media",
     "landing_page_templates": "2",
     "vcs": true
 }
