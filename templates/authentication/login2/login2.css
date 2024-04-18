@@ -8,7 +8,7 @@ body{
 }
 
 .container{
-    background-image: url(./bg3.jpg);
+    background-image: url(/static/imgs/login2_bg.jpg);
     height: 100vh !important;
     max-width: 100% !important;
     width: 100% !important;
