@@ -1,6 +1,9 @@
 import json
 import os
 import subprocess
+from landing_generator import generate_landing_page
+from auth_generator import get_auth_page_config
+     
 
 def load_config():
     with open('config.json', 'r') as config_file:
@@ -103,6 +106,28 @@ MEDIA_ROOT = BASE_DIR / 'media'
     # create media directory
     os.makedirs(config['media_dir'], exist_ok=True)
 
+    # create landing pages
+    landing_pages = generate_landing_page()
+    landing_page_settings = landing_pages[config['landing_page_templates']]
+    if os.path.exists(landing_page_settings['folder']):
+        subprocess.run(["cp", "-r", landing_page_settings['assets'], config['static_dir']])
+        # copy the landing page file to the templates directory
+        subprocess.run(["cp", landing_page_settings['file'], "templates"])
+        os.rename(f"templates/{landing_page_settings['file']}", f"templates/index.html")
+    
+    # create auth page
+    auth_pages = get_auth_page_config()
+    auth_page_settings = auth_pages[config['auth_template_choice']]
+    # COPY CSS to static directory
+    subprocess.run(["cp", auth_page_settings['login_css'], config['static_dir']+"/css/"])
+    subprocess.run(["cp", auth_page_settings['register_css'], config['static_dir']+"/css/"])
+    # COPY images to static directory
+    subprocess.run(["cp", auth_page_settings['login_bg'], config['static_dir']+"/images/"])
+    subprocess.run(["cp", auth_page_settings['register_bg'], config['static_dir']+"/images/"])
+    # COPY login and register html files to templates directory as login.html and register.html
+    subprocess.run(["cp", auth_page_settings['login_dir']+"/"+auth_page_settings['login_file'], "templates/login.html"])
+    subprocess.run(["cp", auth_page_settings['register_dir']+"/"+auth_page_settings['register_file'], "templates/register.html"])
+
     
 
     # Setup version control if required
@@ -110,6 +135,7 @@ MEDIA_ROOT = BASE_DIR / 'media'
         subprocess.run(["git", "init"])
         subprocess.run(["git", "add", "."])
         subprocess.run(["git", "commit", "-m", "Initial commit"])
+        
 
     print("Django project setup complete.")
 
