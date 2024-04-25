@@ -1,9 +1,10 @@
 import json
 import os
 import subprocess
-from landing_generator import generate_landing_page
+from landing_generator import get_landing_page_config
 from auth_generator import get_auth_page_config
-     
+import shutil
+from pprint import pp
 
 def load_config():
     with open('config.json', 'r') as config_file:
@@ -23,9 +24,8 @@ def create_django_project(config):
 
     # create authentication app if needed
     if config['auth_app_needed']:
-        os.makedirs('accounts', exist_ok=True)
-        # copy the account app files
-        subprocess.run(["cp", "-r", "accounts", "accounts"])
+        print(os.getcwd())
+        shutil.copytree('../accounts', 'accounts')
         
     
     # Setting up the database settings
@@ -95,38 +95,51 @@ MEDIA_ROOT = BASE_DIR / 'media'
     os.makedirs('templates', exist_ok=True)
     # create accounts folder in templates if auth app is needed
     os.makedirs('templates/accounts', exist_ok=True)
-    
-    login_template = {
-        1: 'templates/authentication/login1'
-    }
-
+   
     # create static directory
     os.makedirs(config['static_dir'], exist_ok=True)
+    os.makedirs(config['static_dir']+"/css", exist_ok=True)
+    os.makedirs(config['static_dir']+"/images", exist_ok=True)
+    os.makedirs(config['static_dir']+"/js", exist_ok=True)
+    os.makedirs(config['static_dir']+"/vendor", exist_ok=True)
+    os.makedirs(config['static_dir']+"/fonts", exist_ok=True)
 
     # create media directory
     os.makedirs(config['media_dir'], exist_ok=True)
 
     # create landing pages
-    landing_pages = generate_landing_page()
+    landing_pages = get_landing_page_config()
     landing_page_settings = landing_pages[config['landing_page_templates']]
+
+    pp(landing_page_settings)
     if os.path.exists(landing_page_settings['folder']):
-        subprocess.run(["cp", "-r", landing_page_settings['assets'], config['static_dir']])
+        # static file
+        shutil.copytree(landing_page_settings['assets'], config['static_dir'])        
+        shutil.copytree(landing_page_settings['folder'], 'templates')
         # copy the landing page file to the templates directory
-        subprocess.run(["cp", landing_page_settings['file'], "templates"])
         os.rename(f"templates/{landing_page_settings['file']}", f"templates/index.html")
     
     # create auth page
     auth_pages = get_auth_page_config()
     auth_page_settings = auth_pages[config['auth_template_choice']]
+    # pp(auth_page_settings)
     # COPY CSS to static directory
-    subprocess.run(["cp", auth_page_settings['login_css'], config['static_dir']+"/css/"])
-    subprocess.run(["cp", auth_page_settings['register_css'], config['static_dir']+"/css/"])
+
+    if auth_page_settings['login_css']:
+        shutil.copy(auth_page_settings['login_css'], config['static_dir']+"/css/")
+    if auth_page_settings['register_css']:
+        shutil.copy(auth_page_settings['register_css'], config['static_dir']+"/css/")
+
     # COPY images to static directory
-    subprocess.run(["cp", auth_page_settings['login_bg'], config['static_dir']+"/images/"])
-    subprocess.run(["cp", auth_page_settings['register_bg'], config['static_dir']+"/images/"])
+    if auth_page_settings['login_bg']:
+        shutil.copy(auth_page_settings['login_bg'], config['static_dir']+"/images/")
+    if auth_page_settings['register_bg']:
+        shutil.copy(auth_page_settings['register_bg'], config['static_dir']+"/images/")
+
     # COPY login and register html files to templates directory as login.html and register.html
-    subprocess.run(["cp", auth_page_settings['login_dir']+"/"+auth_page_settings['login_file'], "templates/login.html"])
-    subprocess.run(["cp", auth_page_settings['register_dir']+"/"+auth_page_settings['register_file'], "templates/register.html"])
+        shutil.copy(auth_page_settings['login_file'], "templates/accounts/login.html")
+        shutil.copy(auth_page_settings['register_file'], "templates/accounts/register.html")
+    
 
     
 

@@ -1,7 +1,7 @@
 {
-    "title_of_project": "New_Project",
-    "summary": "",
-    "author": "Amit Shukla",
+    "title_of_project": "New Project",
+    "summary": "Its a dummy project",
+    "author": "amit",
     "email": "amit123@gmail.com",
     "database_type": "mysql",
     "db_name": "root",
@@ -16,6 +16,7 @@
     ],
     "static_dir": "static",
     "media_dir": "media",
+    "landing_page_needed": true,
     "landing_page_templates": "1",
     "vcs": false
 }

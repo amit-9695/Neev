@@ -66,8 +66,15 @@ def get_project_config():
     media_dir = input("Enter the name of the media directory: ")
     if media_dir: config['media_dir'] = media_dir
     else: config['media_dir'] = "media"
-    landing_page_templates = input("Choose the landing page template ([1], 2, 3, 4): ") or "1"
-    config['landing_page_templates'] = landing_page_templates
+    # condition for landing page needed or not
+    is_landing_page_needed = input("Do you want to create a landing page? ([yes]/no): ") or "yes"
+    if is_landing_page_needed.lower() == "yes" or not is_landing_page_needed:
+        config['landing_page_needed'] = True
+        landing_page_templates = input("Choose the landing page template ([1], 2, 3, 4): ") or "1"
+        config['landing_page_templates'] = landing_page_templates
+    else:
+        config['landing_page_needed'] = False
+    
     activate_vcs = input("Do you want to activate version control (git)? ([yes]/no): ")
     if activate_vcs.lower() == "yes" or not activate_vcs:
         config['vcs'] = True
