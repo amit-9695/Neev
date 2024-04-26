@@ -106,19 +106,6 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
     # create media directory
     os.makedirs(config['media_dir'], exist_ok=True)
-
-    # create landing pages
-    landing_pages = get_landing_page_config()
-    landing_page_settings = landing_pages[config['landing_page_templates']]
-
-    pp(landing_page_settings)
-    if os.path.exists(landing_page_settings['folder']):
-        # static file
-        shutil.copytree(landing_page_settings['assets'], config['static_dir'])        
-        shutil.copytree(landing_page_settings['folder'], 'templates')
-        # copy the landing page file to the templates directory
-        os.rename(f"templates/{landing_page_settings['file']}", f"templates/index.html")
-    
     # create auth page
     auth_pages = get_auth_page_config()
     auth_page_settings = auth_pages[config['auth_template_choice']]
@@ -140,8 +127,22 @@ MEDIA_ROOT = BASE_DIR / 'media'
         shutil.copy(auth_page_settings['login_file'], "templates/accounts/login.html")
         shutil.copy(auth_page_settings['register_file'], "templates/accounts/register.html")
     
+    # create landing pages
+    landing_pages = get_landing_page_config()
+    landing_page_settings = landing_pages[config['landing_page_templates']]
 
-    
+    # pp(landing_page_settings)
+    if os.path.exists(landing_page_settings['folder']):
+        # copy landing page to templates folder and rename it index.html
+        shutil.copy(landing_page_settings['file'], "templates/index.html")
+       
+        # copy content from assets to static folder
+        if os.path.exists(landing_page_settings['assets']):
+            for root, dirs, files in os.walk(landing_page_settings['assets']):
+                for file in files:
+                    old_path = os.path.join(root, file)
+                    new_path = os.path.join(config['static_dir']+'/'+os.path.basename(root)+"/", file)
+                    shutil.copy(old_path, new_path)
 
     # Setup version control if required
     if config['vcs']:
