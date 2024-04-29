@@ -60,7 +60,7 @@ def get_project_config():
     else:
         config['additional_apps'] = []
     print("Please enter the details of the static and media directories:")
-    static_dir = input("Enter the name of the static directory: ")
+    static_dir = input("Enter the name of the static directory (should not be static): ")
     if static_dir:config['static_dir'] = static_dir
     else: config['static_dir'] = "assets"
     media_dir = input("Enter the name of the media directory: ")

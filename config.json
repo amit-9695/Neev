@@ -1,22 +1,20 @@
 {
-    "title_of_project": "New Project",
-    "summary": "Its a dummy project",
-    "author": "amit",
-    "email": "amit123@gmail.com",
+    "title_of_project": "project1",
+    "summary": "",
+    "author": "anirudh",
+    "email": "anirudh123@gmail.com",
     "database_type": "mysql",
-    "db_name": "root",
+    "db_name": "example",
     "db_user": "root",
     "db_password": "Amit@123",
     "db_host": "localhost",
     "db_port": "3306",
     "auth_app_needed": true,
-    "auth_template_choice": "1",
-    "additional_apps": [
-        "shop"
-    ],
-    "static_dir": "static",
+    "auth_template_choice": "2",
+    "additional_apps": [],
+    "static_dir": "assets",
     "media_dir": "media",
     "landing_page_needed": true,
-    "landing_page_templates": "1",
+    "landing_page_templates": "4",
     "vcs": false
 }

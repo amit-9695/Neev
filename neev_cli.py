@@ -5,7 +5,7 @@ from landing_generator import get_landing_page_config
 from auth_generator import get_auth_page_config
 import shutil
 from pprint import pp
-
+from route_handler import route_generator
 def load_config():
     with open('config.json', 'r') as config_file:
         config = json.load(config_file)
@@ -150,7 +150,8 @@ MEDIA_ROOT = BASE_DIR / 'media'
         subprocess.run(["git", "add", "."])
         subprocess.run(["git", "commit", "-m", "Initial commit"])
         
-
+    # update urls.py
+    route_generator()
     print("Django project setup complete.")
 
 def main():
