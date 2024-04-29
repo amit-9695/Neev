@@ -1,8 +1,8 @@
 {
-    "title_of_project": "project1",
+    "title_of_project": "Project1",
     "summary": "",
-    "author": "anirudh",
-    "email": "ani123@gmail.com",
+    "author": "amit",
+    "email": "amit123@gmail.com",
     "database_type": "mysql",
     "db_name": "example",
     "db_user": "root",
