@@ -1,0 +1,20 @@
+{
+    "title_of_project": "Project1",
+    "summary": "",
+    "author": "amit",
+    "email": "amit123@gmail.com",
+    "database_type": "mysql",
+    "db_name": "example",
+    "db_user": "root",
+    "db_password": "Amit@123",
+    "db_host": "localhost",
+    "db_port": "3306",
+    "auth_app_needed": true,
+    "auth_template_choice": "1",
+    "additional_apps": [],
+    "static_dir": "assets",
+    "media_dir": "media",
+    "landing_page_needed": true,
+    "landing_page_templates": "3",
+    "vcs": false
+}
