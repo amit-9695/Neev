@@ -1,5 +1,5 @@
 {
-    "title_of_project": "Project1",
+    "title_of_project": "Project2",
     "summary": "",
     "author": "amit",
     "email": "amit123@gmail.com",
@@ -15,6 +15,6 @@
     "static_dir": "assets",
     "media_dir": "media",
     "landing_page_needed": true,
-    "landing_page_templates": "3",
+    "landing_page_templates": "1",
     "vcs": false
 }
