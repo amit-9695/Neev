@@ -15,8 +15,8 @@ def get_auth_page_config():
         '2' : {
             "login_dir": "templates/authentication/login2",
             "register_dir": "templates/authentication/register2",
-            'login_file': base_dir + '/templates/authentication/login2/login.html',
-            'register_file': base_dir + '/templates/authentication/register2/register.html',
+            'login_file': base_dir + '/templates/authentication/login2/login2.html',
+            'register_file': base_dir + '/templates/authentication/register2/register2.html',
             'login_css': base_dir + '/templates/authentication/login2/login2.css',
             'register_css': '',
             'login_bg': base_dir + '/templates/authentication/login2/login2_bg.jpg',

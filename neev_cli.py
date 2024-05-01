@@ -124,8 +124,9 @@ MEDIA_ROOT = BASE_DIR / 'media'
         shutil.copy(auth_page_settings['register_bg'], config['static_dir']+"/images/")
 
     # COPY login and register html files to templates directory as login.html and register.html
-        shutil.copy(auth_page_settings['login_file'], "templates/accounts/login.html")
-        shutil.copy(auth_page_settings['register_file'], "templates/accounts/register.html")
+    os.makedirs('templates/accounts', exist_ok=True)
+    shutil.copy(auth_page_settings['login_file'], "templates/accounts/login.html")
+    shutil.copy(auth_page_settings['register_file'], "templates/accounts/register.html")
     
     # create landing pages
     landing_pages = get_landing_page_config()
