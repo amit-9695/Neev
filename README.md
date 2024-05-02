@@ -51,7 +51,7 @@ neev.bat
 - **Landing Page:** Include a landing page? (yes or no).
 - **Landing Page Template:** Choose from templates 1, 2, 3, 4.
 - ### **Landing Pages:**
-- [Landing Page '1'](https://www.google.com](https://drive.google.com/file/d/1y5J0rA5LgS6WWbx9HCj9ZKC6npjdlit3/view?usp=sharing "This is the First Landing Page")
+- [Landing Page '1'](https://drive.google.com/file/d/1y5J0rA5LgS6WWbx9HCj9ZKC6npjdlit3/view?usp=sharing "This is the First Landing Page")
 - [Landing Page '2'](https://drive.google.com/file/d/1F7ctNAAFNWMAFBv1p81j0r-mhKPRyFme/view?usp=sharing "This is the Second Landing Page")
 - [Landing Page '3'](https://drive.google.com/file/d/1spyiW-DgRCknh8Mq-KtTyZ08136jDdrz/view?usp=sharing "This is the Third Landing Page")
 - [Landing Page '4'](https://drive.google.com/file/d/1pfYpH2KrdAOndYi_bognL79nrTVDRlnr/view?usp=sharing "This is the Fourth Landing Page")
