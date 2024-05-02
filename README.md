@@ -45,7 +45,7 @@ neev.bat
 - **Additional Apps:** Need more apps? ('yes' or 'no').
 - **Names of Additional Apps:** List additional app names, separated by commas.
 ### 5. Static and Media Directories:
-- **Static Directory Name:** Enter the static directory name.
+- **Static Directory Name:** Name for static files (avoid 'static').
 - **Media Directory Name:** Enter the media directory name.
 ### 6. Landing Page:
 - **Landing Page:** Include a landing page? (yes or no).
