@@ -50,5 +50,8 @@ neev.bat
 ### 6. Landing Page:
 - **Landing Page:** Include a landing page? (yes or no).
 - **Landing Page Template:** Choose from templates 1, 2, 3, 4.
+- ### **Landing Pages:**
+- [Landing Page '1'](https://www.google.com](https://drive.google.com/file/d/1y5J0rA5LgS6WWbx9HCj9ZKC6npjdlit3/view?usp=sharing "This is the First Landing Page")
+
 ### 7.Version Control:
 - **Version Control:** Enable Git? (yes or no).
