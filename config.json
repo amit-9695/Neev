@@ -1,8 +1,8 @@
 {
-    "title_of_project": "Project4",
+    "title_of_project": "Project5",
     "summary": "",
     "author": "amit",
-    "email": "amit123@gmail.com",
+    "email": "amit@123",
     "database_type": "mysql",
     "db_name": "example",
     "db_user": "root",
@@ -15,6 +15,6 @@
     "static_dir": "assets",
     "media_dir": "media",
     "landing_page_needed": true,
-    "landing_page_templates": "4",
+    "landing_page_templates": "5",
     "vcs": false
 }
