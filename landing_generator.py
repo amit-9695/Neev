@@ -9,10 +9,9 @@ def get_landing_page_config():
             'assets': base_dir + r'\templates\Landing_Pages\Landing1\assets'
         },
         '2' : {
-            'folder':base_dir + r'\templates\Landing_Pages\Landing2',
-            'file': base_dir + r'\templates\Landing_Pages\Landing2\landing2.html',
-            'rename': 'index.html',
-            'assets': base_dir + r'\templates\Landing_Pages\Landing2\dist'
+            'folder': base_dir + r'\templates\Landing_Pages\Landing2',
+            'file': base_dir + r'\templates\Landing_Pages\Landing2\index.html',
+            'assets': base_dir + r'\templates\Landing_Pages\Landing2\assets'
         },
         '3' : {
             'folder':base_dir + r'\templates\Landing_Pages\Landing3',
@@ -26,13 +25,4 @@ def get_landing_page_config():
             'rename': 'index.html',
             'assets': base_dir + r'\templates\Landing_Pages\Landing4\assets'
         },
-        '5' : {
-            'folder': base_dir + r'\templates\Landing_Pages\Landing5',
-            'file': base_dir + r'\templates\Landing_Pages\Landing5\index.html',
-            'file': base_dir + r'\templates\Landing_Pages\Landing5\about.html',
-            'file': base_dir + r'\templates\Landing_Pages\Landing5\contact.html',
-            'file': base_dir + r'\templates\Landing_Pages\Landing5\coffees.html',
-            'file': base_dir + r'\templates\Landing_Pages\Landing5\blog.html',
-            'assets': base_dir + r'\templates\Landing_Pages\Landing5\assets'
-        }
     }
