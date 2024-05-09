@@ -110,8 +110,8 @@ MEDIA_ROOT = BASE_DIR / 'media'
     auth_pages = get_auth_page_config()
     auth_page_settings = auth_pages[config['auth_template_choice']]
     # pp(auth_page_settings)
+    
     # COPY CSS to static directory
-
     if auth_page_settings['login_css']:
         shutil.copy(auth_page_settings['login_css'], config['static_dir']+"/css/")
     if auth_page_settings['register_css']:
@@ -122,6 +122,13 @@ MEDIA_ROOT = BASE_DIR / 'media'
         shutil.copy(auth_page_settings['login_bg'], config['static_dir']+"/images/")
     if auth_page_settings['register_bg']:
         shutil.copy(auth_page_settings['register_bg'], config['static_dir']+"/images/")
+
+    # COPY js to static directory
+    if auth_page_settings.get('login_js'):
+        for js_file in auth_page_settings['login_js'].split(','):
+            shutil.copy(auth_page_settings['login_js'], config['static_dir']+"/js/")
+    
+
 
     # COPY login and register html files to templates directory as login.html and register.html
     os.makedirs('templates/accounts', exist_ok=True)

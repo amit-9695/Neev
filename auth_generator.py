@@ -21,5 +21,18 @@ def get_auth_page_config():
             'register_css': '',
             'login_bg': base_dir + '/templates/authentication/login2/login2_bg.jpg',
             'register_bg': '',
-        } # type: ignore
+        }, # type: ignore
+        
+        '3' : { 
+            "login_dir": "templates/authentication/login3",
+            "register_dir": "templates/authentication/register1",
+            'login_file': base_dir + '/templates/authentication/login3/login3.html',
+            'register_file': base_dir + '/templates/authentication/register1/register.html',
+            'login_css': base_dir + '/templates/authentication/login3/login3.css',
+            'register_css': base_dir + '/templates/authentication/register1/register.css',
+            'login_bg': base_dir + '/templates/authentication/login3/bg-1.jpg',
+            'register_bg': base_dir + '/templates/authentication/register1/register_bg.jpg',
+            'login_js': base_dir + '/templates/authentication/login3/bootstrap.min.js, ' + base_dir + '/templates/authentication/login3/jquery.min.js, ' + base_dir + '/templates/authentication/login3/popper.min.js, ' + base_dir + '/templates/authentication/login3/login3.js',
+
+        },
     }
