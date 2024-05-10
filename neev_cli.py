@@ -6,6 +6,7 @@ from auth_generator import get_auth_page_config
 import shutil
 from pprint import pp
 from route_handler import route_generator
+from requirement_generator import generate
 def load_config():
     with open('config.json', 'r') as config_file:
         config = json.load(config_file)
@@ -125,8 +126,7 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
     # COPY js to static directory
     if auth_page_settings.get('login_js'):
-        for js_file in auth_page_settings['login_js'].split(','):
-            shutil.copy(auth_page_settings['login_js'], config['static_dir']+"/js/")
+        shutil.copy(auth_page_settings['login_js'], config['static_dir']+"/js/")
     
 
 
@@ -166,6 +166,7 @@ def main():
     config = load_config()
 
     create_django_project(config)
+    generate()
 
 if __name__ == "__main__":
     main()
