@@ -5,12 +5,13 @@ def get_auth_page_config():
         '1' : {
             "login_dir": "templates/authentication/login1",
             "register_dir": "templates/authentication/register1",
-            'login_file': base_dir + '/templates/authentication/login1/login.html',
+            'login_file': base_dir + '/templates/authentication/login1/login1.html',
             'register_file': base_dir + '/templates/authentication/register1/register.html',
-            'login_css': base_dir + '/templates/authentication/login1/login.css',
+            'login_css': base_dir + '/templates/authentication/login1/login1.css',
             'register_css': base_dir + '/templates/authentication/register1/register.css',
-            'login_bg': '',
+            'login_bg': base_dir + '/templates/authentication/login1/bg-1.jpg',
             'register_bg': base_dir + '/templates/authentication/register1/register_bg.jpg',
+            'login_js': base_dir + '/templates/authentication/login1/main.js',
         },
         '2' : {
             "login_dir": "templates/authentication/login2",
@@ -22,16 +23,4 @@ def get_auth_page_config():
             'login_bg': base_dir + '/templates/authentication/login2/login2_bg.jpg',
             'register_bg': '',
         }, # type: ignore
-        
-        '3' : { 
-            "login_dir": "templates/authentication/login3",
-            "register_dir": "templates/authentication/register1",
-            'login_file': base_dir + '/templates/authentication/login3/login3.html',
-            'register_file': base_dir + '/templates/authentication/register1/register.html',
-            'login_css': base_dir + '/templates/authentication/login3/login3.css',
-            'register_css': base_dir + '/templates/authentication/register1/register.css',
-            'login_bg': base_dir + '/templates/authentication/login3/bg-1.jpg',
-            'register_bg': base_dir + '/templates/authentication/register1/register_bg.jpg',
-            'login_js': base_dir + '/templates/authentication/login3/main.js',
-        },
     }

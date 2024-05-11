@@ -47,7 +47,7 @@ def get_project_config():
     is_auth_app_needed = input("Do you want to create an authentication app? ([yes]/no): ") or "yes"
     if is_auth_app_needed.lower() == "yes" or not is_auth_app_needed:
         config['auth_app_needed'] = True
-        auth_template_choice = input("Choose the authentication app template ([1], 2, 3 ): ") or "1"
+        auth_template_choice = input("Choose the authentication app template ([1], 2 ): ") or "1"
         config['auth_template_choice'] = auth_template_choice
     else:
         config['auth_app_needed'] = False
