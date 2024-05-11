@@ -1,5 +1,5 @@
 {
-    "title_of_project": "project1",
+    "title_of_project": "project2",
     "summary": "",
     "author": "amit",
     "email": "amit123@gmail.com",
@@ -10,11 +10,11 @@
     "db_host": "localhost",
     "db_port": "3306",
     "auth_app_needed": true,
-    "auth_template_choice": "1",
+    "auth_template_choice": "2",
     "additional_apps": [],
     "static_dir": "assets",
     "media_dir": "media",
     "landing_page_needed": true,
-    "landing_page_templates": "2",
+    "landing_page_templates": "3",
     "vcs": false
 }
