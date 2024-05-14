@@ -1,0 +1,9 @@
+django
+pillow
+django-crispy-forms
+django-extensions
+django-filter
+django-rest-framework
+gunicorn
+psycopg2
+whitenoise
